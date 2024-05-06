@@ -73,6 +73,7 @@ exports.regUser = (req, res) => {
 
 
 // 登录的处理函数
+// 新增需求---登录成功之后，建立一个socket连接，记录用户的登录时间 等用户退出时记录用户的退出连接
 exports.login = (req, res) => {
     const userInfo = req.body
     userInfo.username.trim()

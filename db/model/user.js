@@ -24,14 +24,14 @@ const User = db.define('imc_user',
             fields: 'id',//实现模型的属性名和表的列名之间的映射关系(对应关系)
         },
         'username': {
-            type: Sequelize.STRING(255),
+            type: Sequelize.STRING(10),
             autoIncrement: false,
             allowNull: false,
             fields: 'username',
 
         },
         'password': {
-            type: Sequelize.STRING(255),
+            type: Sequelize.STRING(10),
             autoIncrement: false,
             allowNull: false,
             fields: 'password',
@@ -41,7 +41,6 @@ const User = db.define('imc_user',
             autoIncrement: false,
             allowNull: true,
             fields: 'status',
-
         },
         'create_time': {
             type: Sequelize.DATE,
@@ -54,7 +53,20 @@ const User = db.define('imc_user',
             autoIncrement: false,
             allowNull: true,
             fields: 'update_time',
-        }
+        },
+        'quit_time': {
+            type: Sequelize.DATE,
+            autoIncrement: false,
+            allowNull: true,
+            fields: 'quit_time',
+        },
+        'login_time': {
+            type: Sequelize.DATE,
+            autoIncrement: false,
+            allowNull: true,
+            fields: 'login_time',
+        },
+
 
     },
     {

@@ -1,7 +1,7 @@
 /*
  * @Author: imc-明安瑞
  * @Date: 2024-04-19 17:52:12
- * @LastEditTime: 2024-04-22 14:24:00
+ * @LastEditTime: 2024-05-06 16:08:14
  * @LastEditors: imc-Mar
  * @Description: 有问题请联系我 tel:13562850362
  * @FilePath: \node-express-officePeople\db\model\staff.js
@@ -19,26 +19,26 @@ const db = require('../index.js')
 const Staff = db.define('imc_staff',
     {
         'id': {
-            type: Sequelize.INTEGER(11), // 数据类型
+            type: Sequelize.INTEGER(10), // 数据类型
             primaryKey: true, // 主键
             autoIncrement: true, // 自动增长
             allowNull: true,// 是否允许为空
             fields: 'id',
         },
         'name': {
-            type: Sequelize.STRING(255), // 数据类型
+            type: Sequelize.STRING(10), // 数据类型
             autoIncrement: false, // 自动增长
             allowNull: false,// 是否允许为空
             fields: 'name',
         },
         'address': {
-            type: Sequelize.STRING(255), // 数据类型
+            type: Sequelize.STRING(20), // 数据类型
             autoIncrement: false, // 自动增长
             allowNull: false,// 是否允许为空
             fields: 'adress',
         },
         'department': {
-            type: Sequelize.STRING(255), // 数据类型
+            type: Sequelize.STRING(20), // 数据类型
             autoIncrement: false, // 自动增长
             allowNull: false,// 是否允许为空
             fields: 'department',
@@ -56,7 +56,7 @@ const Staff = db.define('imc_staff',
             fields: 'isLeader',
         },
         'position': {
-            type: Sequelize.STRING(255), // 数据类型
+            type: Sequelize.STRING(10), // 数据类型
             autoIncrement: false, // 自动增长
             allowNull: false,// 是否允许为空
             fields: 'position',
@@ -104,19 +104,19 @@ const Staff = db.define('imc_staff',
             fields: 'delete_time',
         },
         'creater': {
-            type: Sequelize.STRING(255), // 数据类型
+            type: Sequelize.STRING(15), // 数据类型
             autoIncrement: false, // 自动增长
             allowNull: true,// 是否允许为空
             fields: 'creater',
         },
         'editor': {
-            type: Sequelize.STRING(255), // 数据类型
+            type: Sequelize.STRING(15), // 数据类型
             autoIncrement: false, // 自动增长
             allowNull: true,// 是否允许为空
             fields: 'editor',
         },
         'deleter': {
-            type: Sequelize.STRING(255), // 数据类型
+            type: Sequelize.STRING(15), // 数据类型
             autoIncrement: false, // 自动增长
             allowNull: true,// 是否允许为空
             fields: 'deleter',
