@@ -1,12 +1,14 @@
 /*
  * @Author: imc-明安瑞
  * @Date: 2024-04-19 18:22:46
- * @LastEditTime: 2024-04-22 18:08:53
+ * @LastEditTime: 2024-05-07 15:02:35
  * @LastEditors: imc-Mar
  * @Description: 有问题请联系我 tel:13562850362
  * @FilePath: \node-express-officePeople\router_handler\staff.js
  * 一川烟草，满城风絮，梅子黄时雨。
  */
+
+const { Sequelize } = require('sequelize');
 // 引入Staff实体类 
 const Staff = require('../db/model/staff')
 // 获取时间的插件
@@ -228,9 +230,10 @@ exports.queryStaff = (req, res) => {
     } else {
         // 没有传值过来，查询所有的职工
         Staff.findAll({
+            attributes: ['id', 'name', 'address', 'department'],
             where: {
                 status: 0
-            }
+            },
         }).then(result => {
             // console.log(result);
             return res.send({
@@ -245,4 +248,14 @@ exports.queryStaff = (req, res) => {
         console.log(2);
     }
     // res.send('ok4')
+}
+
+// 查询细节 
+exports.queryStaffDetailsById = (req, res) => {
+
+}
+
+// 模糊搜索
+exports.fuzzySearch = (req, res) => {
+
 }
